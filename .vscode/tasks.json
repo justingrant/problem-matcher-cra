@@ -4,13 +4,16 @@
     {
       "type": "npm",
       "script": "start",
-      "isBackground": true,
+      "isBackground": true, // should cause VSCode error if commented out
       "problemMatcher": [
         {
+          "owner": "cra",
           "fileLocation": ["relative", "${workspaceFolder}"],
+          "source": "create-react-app",
+          "applyTo": "allDocuments",
           "pattern": [
             {
-                "regexp": "^([^\\s].*)$",
+                "regexp": "^([^\\s].*?)$",
                 "file": 1
             },
             {
@@ -23,8 +26,8 @@
           ],
           "background": {
             "activeOnStart": false,
-            "beginsPattern": "Compiled with",
-            "endsPattern": "To ignore, add"
+            "beginsPattern": "^(?:Compiled with warnings\\.|Compiled successfully!)$",
+            "endsPattern": "^(?:Search for the keywords to learn more about each warning\\.|Note that the development build is not optimized\\.)$"  
           }
         }
       ]
