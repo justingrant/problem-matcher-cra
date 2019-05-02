@@ -4,7 +4,7 @@
     {
       "type": "npm",
       "script": "start",
-      "isBackground": true, // should cause VSCode error if commented out
+      "isBackground": true,
       "problemMatcher": [
         {
           "owner": "cra",
